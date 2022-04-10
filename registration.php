@@ -50,7 +50,7 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" name="fName" placeholder="Enter your name" required>
+            <input type="text" name="fname" placeholder="Enter your name" required>
           </div>
           <div class="input-box">
             <span class="details">Username</span>
