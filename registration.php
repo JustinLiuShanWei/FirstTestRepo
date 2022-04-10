@@ -1,18 +1,21 @@
 <?php
     session_start();
     include ("db_connect.php");
-    include ("functions.php");
+    include ("login-functions.php");
 
     if($_SERVER['REQUEST_METHOD']=="POST"){
         //POST SOMETHING
-        $user_name = $_POST['username'];
-        $password = $_POST['password'];
+        $name = $_POST['fname'];
+        $email = $_POST['femail'];
+        $phone = $_POST['fphone'];
+        $user_name = $_POST['fusername'];
+        $password = $_POST['fpassword'];
 
         if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
             $query=  mysqli_query($conn,"Select * from userdatabase where username='$user_name'");
             $numrows=mysqli_num_rows($query); 
             if ($numrows==0){
-                $query = "insert into userdatabase (id,username,password) values ('','$user_name','$password')";
+                $query = "insert into userdatabase (id,name,email,phone,username,password) values ('','$name','$email','$phone','$user_name','$password')";
                 mysqli_query($conn,$query);
                 header("Location: login.php");
                 echo '<script>alert("Registration Successful!")</script>';
@@ -28,38 +31,69 @@
         }
     }
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <?php include_once 'Include/header.php'; ?>
-</head>
-<html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/styleRegistration.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 <body>
-   <section>
-        <div class="imgBx">
-            <img src="images/loginFoodBackground.jpg" alt="loginBG">
+    <?php include 'registration-navbar.php' ?>
+    <?php include 'registration-footer.php' ?>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form action="registration.php" method="POST">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" name="fName" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" name="fusername" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" name="femail" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="tel" name="fphone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" name="fpassword" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" name="fpasswordcon" placeholder="Confirm your password" required>
+          </div>
         </div>
-        <div class="loginContentBx">
-            <div class="formBx">
-                <h2>Registration</h2>
-                <form action="registration.php" method="POST">
-                    <div class="inputBx">
-                        <span>Username</span>
-                        <input type="text" name="username">
-                    </div>
-                    <div class="inputBx">
-                        <span>Password</span>
-                        <input type="password" name="password">
-                    </div>
-                    <div class="inputBx">
-                        <input type="submit" value="Sign Up" name="submit">
-                    </div>
-                    <div class="inputBx">
-                        <p>Have an account? <a href="login.php">Login</a></p>
-                    </div>
-                </form>
-            </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          </div>
         </div>
-    </section>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>

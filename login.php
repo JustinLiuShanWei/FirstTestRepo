@@ -1,12 +1,12 @@
 <?php
     session_start();
     include ("db_connect.php");
-    include ("functions.php");
+    include ("login-functions.php");
 
     if($_SERVER['REQUEST_METHOD']=="POST"){
         //POST SOMETHING
-        $user_name = $_POST['username'];
-        $password = $_POST['password'];
+        $user_name = $_POST['fusername'];
+        $password = $_POST['fpassword'];
 
         if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
             //read from database
@@ -32,7 +32,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include_once 'Include/header.php'; ?>
+    <?php include_once 'Include/headerLogin.php'; ?>
 </head>
 <html>
 <body>
@@ -46,11 +46,11 @@
                 <form action="login.php" method="POST">
                     <div class="inputBx">
                         <span>Username</span>
-                        <input type="text" name="username">
+                        <input type="text" name="fusername" required>
                     </div>
                     <div class="inputBx">
                         <span>Password</span>
-                        <input type="password" name="password">
+                        <input type="password" name="fpassword" required>
                     </div>
                     <div class="inputBx">
                         <input type="submit" value="Login" name="submit">
