@@ -10,12 +10,14 @@
         $phone = $_POST['fphone'];
         $user_name = $_POST['fusername'];
         $password = $_POST['fpassword'];
+        $passwordcon = $_POST['fpasswordcon'];
 
-        if(!empty($user_name) && !empty($password) && !is_numeric($user_name)){
-            $query=  mysqli_query($conn,"Select * from userdatabase where username='$user_name'");
+        if(!empty($user_name) && !empty($password) && !is_numeric($user_name) && !is_numeric($name) && $password==$passwordcon){
+            $encrypted_pwd = md5($password);
+            $query=  mysqli_query($conn,"Select * from userdatabase where username='$user_name' or email='$email'");
             $numrows=mysqli_num_rows($query); 
             if ($numrows==0){
-                $query = "insert into userdatabase (id,name,email,phone,username,password) values ('','$name','$email','$phone','$user_name','$password')";
+                $query = "insert into userdatabase (id,name,email,phone,username,password) values ('','$name','$email','$phone','$user_name','$encrypted_pwd')";
                 mysqli_query($conn,$query);
                 header("Location: login.php");
                 echo '<script>alert("Registration Successful!")</script>';
@@ -23,7 +25,7 @@
                 die;
             }
             else{
-                echo '<script>alert("Username has been used! Please enter another username")</script>';
+                echo '<script>alert("Username/Email has been used! Please enter another email/username")</script>';
             }
         }
         else{
