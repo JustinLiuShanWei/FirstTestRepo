@@ -18,6 +18,7 @@
                 if ($user_data['password']==$password){
                     $_SESSION['user_id'] = $user_data['id'];
                     echo "Login Sucessfull";
+                    header("Location: mainMenu.php");
                     die;
                 }
             }
@@ -36,12 +37,13 @@
 </head>
 <html>
 <body>
-   <section>
+    <section>
         <div class="imgBx">
             <img src="images/loginFoodBackground.jpg" alt="loginBG">
         </div>
         <div class="loginContentBx">
             <div class="formBx">
+                <li class="return"><a href="mainMenu.php">Return</a></li>
                 <h2>Login</h2>
                 <form action="login.php" method="POST">
                     <div class="inputBx">

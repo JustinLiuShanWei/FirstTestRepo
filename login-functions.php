@@ -1,18 +1,19 @@
 <?php
 
-function check_login($con){
+function check_login($conn){
     if(isset($_SESSION['user_id'])){
         $id = $_SESSION['user_id'];
-        $query = "select * from userdatabase where user_id = '$id' limit 1";
+        $query = "select * from userdatabase where id = '$id' limit 1";
 
-        $result = mysqli_query($con,$query);
+        $result = mysqli_query($conn,$query);
         if($result && mysqli_num_rows($result) > 0){
             $user_data = mysqli_fetch_assoc($result);
-            return $user_data;
+            return 1;
         }
     }
-
     //redirect to login
-    header("Location: login.php");
+    else{
+        return 0;
+    }
     die;
 }
