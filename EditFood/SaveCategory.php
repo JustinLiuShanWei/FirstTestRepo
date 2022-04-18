@@ -7,7 +7,7 @@ $jid=0;
 $run=mysqli_query($con,$qry);
 while ($rows=mysqli_fetch_array($run))
       {
-                  $jid=$rows[0];
+            $jid=$rows[0];
       }
 
 $qry="Insert into MenuCategory_tbl values ($jid+1,'$cd')";

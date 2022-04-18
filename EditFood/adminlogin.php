@@ -10,7 +10,7 @@ $(document).ready(function(){
     $("#contents").load("AddMenuItem.php");
   });
   $("#DelCat").click(function(){
-    $("#contents").load("DeleteCat.php");
+    $("#contents").load("deleteCategory.php");
   });
   $("#ModifyItem").click(function(){
     $("#contents").load("ModifyItem.php");
