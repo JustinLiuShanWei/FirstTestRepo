@@ -7,7 +7,7 @@
     <title>Pinocone Food Menu</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jason Kho" />
-    <meta name="description" content="Warm Food Menu" />
+    <meta name="description" content="Cold Food Menu" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <script src="slide.js"></script> 
     <script src="script.js"></script> 
@@ -17,6 +17,7 @@
 <!-- Start of Body -->
 <body>
 <header>
+
 <!-- Navigation Bar -->
     <div class="menu">
         
@@ -24,7 +25,7 @@
             <a href="index.php"><img class="logo1" src="images/Pinocone.jpg" alt="Pinocone Catering System Logo" /></a>
             <h1>Pinocone Catering Services</h1>
             <h3>Menu Page</h3>
-            <h3> -- Warm Food Menu -- </h3>
+            <h3> -- Cold Food Menu -- </h3>
             <div class="dropdown">
                 <a onclick="myFunction()" class="dropbtn"><img class="logo2" src="images/login.png" alt="Log In Logo" /></a>
                 
@@ -38,7 +39,6 @@
         </div>
     </div>
 </header>
-
 <article>
     <div class="dropdown_article1">
         <a class="dropbtn_good">&#8615; &#160; &#160; &#160;Types of Goods&#160; &#160; &#160; &#8615;</a>
