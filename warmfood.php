@@ -1,3 +1,10 @@
+<?php
+    include ("db_connect.php");
+    $query = "select * from product_database";
+    $products = mysqli_query($conn,$query);
+    $total_products = mysqli_num_rows($products);
+?>
+
 <!DOCTYPE html>
 
 <!-- Start of HTML -->
