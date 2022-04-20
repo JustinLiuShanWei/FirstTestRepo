@@ -1,6 +1,19 @@
-<?php
-    echo
-	'<br />
+<!DOCTYPE html>
+
+<!-- Start of HTML -->
+<html lang="en">
+
+<head>
+    <title>Pinocone Food Menu - Header</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jason Kho" />
+    <meta name="description" content="Food Menu Header" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<br />
     <div class="working-hours">
         <h3>Working Hours:</h3>
         <p>Monday........10:30am > 20:30pm</p>
@@ -14,7 +27,7 @@
     <div class="services">
         <h3>Kinds of Food</h3>
         <p><a href="coldfood.html">Frozen Food</a></p>
-        <p><a href="hotfood.php">Warm Food</a></p>
+        <p><a href="warmfood.html">Warm Food</a></p>
     </div>
     <div class="contact">
         <h3>Contact</h3>
@@ -29,5 +42,7 @@
         <h2>Welcome to order your foods whenever, wherever YOU ARE!</h2>
     </div>
     <div class="last"> &#169; Pinocone Catering Online Services || Est. 2022</div>
-    <br />';
-?>
+    <br />
+
+</body>
+</html>
