@@ -67,6 +67,26 @@
         <label for="address" style="font-weight:bold">Deliver Address:</label>
         <textarea id="address" name="address" rows="1" cols="50" placeholder="Provide Delivery Address"></textarea>
     </form>
+
+    <p class="productNum"><?=$total_products?> Products Found</p>
+    <div class="productContainer">
+        <?php foreach ($products as $product): ?>
+        <div class="card">
+            <div>
+                <img src="images/productImages/<?=$product['foodImageLoc']?>" alt="<?=$product['foodTitle']?>" class="card-image">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title"><?=$product['foodTitle']?></h2>
+                <p class="card-text"><?=$product['foodDescription']?></p>
+                <h5>
+                    <span class="price">RM<?=number_format($product['foodPrice'],2)?></span>
+                </h5>
+                <button type="submit" name="addCart">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+
 </article>
 <footer>
     <?php include_once 'footer.php'; ?>
