@@ -29,8 +29,8 @@ $(document).ready(function(){
     
       </div>
       <div class="row" style="height: 5%;background-color:#480673; color:#ffffff;">
-    <div class="col-10"><h3>Gourmet Online Food Order</h3></div>
-    <div class="col-2"><a href="logout.php">Log Out <?php session_start(); echo $_SESSION['Uname'];?></a></div>
+    <div class="col-10"><h3>Pinocone Food Catering</h3></div>
+    <!-- <div class="col-2"><a href="logout.php">Log Out <?php session_start(); echo $_SESSION['Uname'];?></a></div> -->
       </div>
       
   
