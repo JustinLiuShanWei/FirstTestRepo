@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 07:00 AM
+-- Generation Time: Apr 20, 2022 at 05:25 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,27 +24,50 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `product_category_extension`
+--
+
+CREATE TABLE `product_category_extension` (
+  `Category` int(200) NOT NULL,
+  `CatDesc` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product_category_extension`
+--
+
+INSERT INTO `product_category_extension` (`Category`, `CatDesc`) VALUES
+(1, 'Asian Food Cat'),
+(3, 'Asian Food Cat'),
+(4, 'Cold Freezing Food'),
+(5, 'Western Food');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_database`
 --
 
 CREATE TABLE `product_database` (
-  `foodID` int(11) NOT NULL,
-  `foodTitle` varchar(200) NOT NULL,
-  `foodDescription` varchar(500) NOT NULL,
-  `foodQuantity` int(200) NOT NULL,
-  `foodPrice` double NOT NULL,
-  `foodImageLoc` varchar(200) NOT NULL
+  `ItemID` int(11) NOT NULL,
+  `ItemName` varchar(200) NOT NULL,
+  `ItemDesc` varchar(500) NOT NULL,
+  `ItemQuantity` int(200) NOT NULL,
+  `ItemPrice` double NOT NULL,
+  `ItemPriceDis` double NOT NULL,
+  `ItemImageLoc` varchar(200) NOT NULL,
+  `ItemCategory` int(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `product_database`
 --
 
-INSERT INTO `product_database` (`foodID`, `foodTitle`, `foodDescription`, `foodQuantity`, `foodPrice`, `foodImageLoc`) VALUES
-(1, 'Korean Food', 'Some quick example text to build on the card.', 10, 2.5, 'product1.jpg'),
-(2, 'American Burger', 'Dsdadadsadasdasdadwqewqeqwdsadas', 10, 5, 'product2.jpg'),
-(3, 'Kolo Mee', 'Nice food in Kuching to have', 10, 3, 'product3.jpg'),
-(4, 'Kolo Mee', 'Nice food in Kuching to have', 10, 3, 'product3.jpg');
+INSERT INTO `product_database` (`ItemID`, `ItemName`, `ItemDesc`, `ItemQuantity`, `ItemPrice`, `ItemPriceDis`, `ItemImageLoc`, `ItemCategory`) VALUES
+(2, 'American Burger', 'Dsdadadsadasdasdadwqewqeqwdsadas', 10, 5, 0, 'product2.jpg', 1),
+(3, 'Kolo Mee', 'Nice food in Kuching to have', 10, 3, 0, 'product3.jpg', 3),
+(5, 'Kolo', 'ewqeqeqewq', 2, 3, 10, 'product3.jpg', 1),
+(7, 'Kolo Mee', 'ewqeqeeqee', 2, 4, 0, 'product3.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -83,10 +106,16 @@ INSERT INTO `userdatabase` (`id`, `name`, `email`, `phone`, `username`, `passwor
 --
 
 --
+-- Indexes for table `product_category_extension`
+--
+ALTER TABLE `product_category_extension`
+  ADD PRIMARY KEY (`Category`);
+
+--
 -- Indexes for table `product_database`
 --
 ALTER TABLE `product_database`
-  ADD PRIMARY KEY (`foodID`);
+  ADD PRIMARY KEY (`ItemID`);
 
 --
 -- Indexes for table `userdatabase`
@@ -99,10 +128,16 @@ ALTER TABLE `userdatabase`
 --
 
 --
+-- AUTO_INCREMENT for table `product_category_extension`
+--
+ALTER TABLE `product_category_extension`
+  MODIFY `Category` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `product_database`
 --
 ALTER TABLE `product_database`
-  MODIFY `foodID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ItemID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `userdatabase`
