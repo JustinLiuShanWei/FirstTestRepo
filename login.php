@@ -16,10 +16,17 @@
             if($result && mysqli_num_rows($result)>0){
                 $user_data = mysqli_fetch_assoc($result);
                 if ($user_data['password']==$password){
-                    $_SESSION['user_id'] = $user_data['id'];
-                    echo "Login Sucessfull";
-                    header("Location: mainMenu.php");
-                    die;
+                    if ($user_data['admin']==true){
+                        $_SESSION['user_id'] = $user_data['id'];
+                        $_SESSION['adminName'] = $user_data['name'];
+                        header("Location: adminMainPage.php");
+                    }
+                    else{
+                        $_SESSION['user_id'] = $user_data['id'];
+                        echo "Login Sucessfull";
+                        header("Location: mainMenu.php");
+                        die;
+                    }
                 }
             }
             echo '<script>alert("Wrong username/password")</script>';
@@ -43,7 +50,6 @@
         </div>
         <div class="loginContentBx">
             <div class="formBx">
-                <li class="return"><a href="mainMenu.php">Return</a></li>
                 <h2>Login</h2>
                 <form action="login.php" method="POST">
                     <div class="inputBx">
@@ -59,6 +65,7 @@
                     </div>
                     <div class="inputBx">
                         <p>Don't have an account? <a href="registration.php">Sign Up</a></p>
+                        <p>Return to Main Page. <a href="mainMenu.php">Return</a></p>
                     </div>
                 </form>
             </div>

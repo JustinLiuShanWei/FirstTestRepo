@@ -99,8 +99,9 @@ section .loginContentBx .formBx .inputBx p a{
 }
 
 section .return{
-    position: absolute;
-    
+    right: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
 
