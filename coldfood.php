@@ -77,25 +77,7 @@
     
     <br />
     <br />
-    <br />
-    <br />
-    <div class="productContainer">
-        <?php foreach ($products as $product): ?>
-        <div class="card">
-            <div>
-                <img src="images/productImages/<?=$product['foodImageLoc']?>" alt="<?=$product['foodTitle']?>" class="card-image">
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><?=$product['foodTitle']?></h2>
-                <p class="card-text"><?=$product['foodDescription']?></p>
-                <h5>
-                    <span class="price">RM<?=number_format($product['foodPrice'],2)?></span>
-                </h5>
-                <button type="submit" name="addCart" class="addtoCart" style="font-size:24px">Add to Cart<i class="fa fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    </div>
+    
 
 </article>
 <footer>

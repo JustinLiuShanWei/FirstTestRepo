@@ -16,8 +16,7 @@
     <meta name="author" content="Jason Kho" />
     <meta name="description" content="Warm Food Menu" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <script src="slide.js"></script> 
-    <script src="script.js"></script> 
+    <link rel="stylesheet" type="text/css" href="styles/foodstyle.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -74,6 +73,27 @@
         <label for="address" style="font-weight:bold">Deliver Address:</label>
         <textarea id="address" name="address" rows="1" cols="50" placeholder="Provide Delivery Address"></textarea>
     </form>
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="productContainer">
+        <?php foreach ($products as $product): ?>
+        <div class="card">
+            <div>
+                <img src="images/productImages/<?=$product['foodImageLoc']?>" alt="<?=$product['foodTitle']?>" class="card-image">
+            </div>
+            <div class="card-body">
+                <h2 class="card-title"><?=$product['foodTitle']?></h2>
+                <p class="card-text"><?=$product['foodDescription']?></p>
+                <h5>
+                    <span class="price">RM<?=number_format($product['foodPrice'],2)?></span>
+                </h5>
+                <button type="submit" name="addCart" class="addtoCart" style="font-size:24px">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
 </article>
 <footer>
     <?php include_once 'footer.php'; ?>
