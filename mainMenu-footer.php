@@ -6,49 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style/styleMainMenu-Footer.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <footer class="footer">
-  	 <div class="container">
-  	 	<div class="row">
-  	 		<div class="footer-col">
-  	 			<h4>company</h4>
-  	 			<ul>
-  	 				<li><a href="#">about us</a></li>
-  	 				<li><a href="#">our services</a></li>
-  	 				<li><a href="#">privacy policy</a></li>
-  	 				<li><a href="#">affiliate program</a></li>
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<h4>get help</h4>
-  	 			<ul>
-  	 				<li><a href="#">FAQ</a></li>
-  	 				<li><a href="#">shipping</a></li>
-  	 				<li><a href="#">returns</a></li>
-  	 				<li><a href="#">order status</a></li>
-  	 				<li><a href="#">payment options</a></li>
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<h4>online shop</h4>
-  	 			<ul>
-  	 				<li><a href="#">watch</a></li>
-  	 				<li><a href="#">bag</a></li>
-  	 				<li><a href="#">shoes</a></li>
-  	 				<li><a href="#">dress</a></li>
-  	 			</ul>
-  	 		</div>
-  	 		<div class="footer-col">
-  	 			<h4>follow us</h4>
-  	 			<div class="social-links">
-  	 				<a href="#"><i class="fab fa-facebook-f"></i></a>
-  	 				<a href="#"><i class="fab fa-twitter"></i></a>
-  	 				<a href="#"><i class="fab fa-instagram"></i></a>
-  	 			</div>
-  	 		</div>
-  	 	</div>
-  	 </div>
-  </footer>
+	<footer>
+		<br />
+		<div class="working-hours">
+			<h3>Working Hours:</h3>
+			<p>Monday........10:30am > 20:30pm</p>
+			<p>Tuesday.......10:30am > 20:30pm</p>
+			<p>Wednesday..10:30am > 20:30pm</p>
+			<p>Thursday......10:30am > 20:30pm</p>
+			<p>Friday...........10:30am > 20:00pm</p>
+			<p>Saturday.......10:30am > 20:30pm</p>
+			<p>Sunday.........10:30am > 20:30pm</p>
+		</div>
+		<div class="services">
+			<h3>Kinds of Food</h3>
+			<p><a href="coldfood.html">Frozen Food</a></p>
+			<p><a href="warmfood.html">Warm Food</a></p>
+		</div>
+		<div class="contact">
+			<h3>Contact</h3>
+			<p>Email: <span class="link"><a href="mailto:101233218@students.swinburne.edu.my">101233218@students.swinburne.edu.my</a></span></p>
+			<p>Office: 085 320011</p>
+			<h3>Social Media</h3>
+				<a href="https://www.facebook.com/profile.php?id=100000792619178" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="https://www.instagram.com/jason_kho02/" target="_blank"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.snapchat.com/add/jasonkho14" target="_blank"><i class="fa fa-snapchat-ghost"></i></a>
+		</div>
+		<div class="acknowledgement">
+			<h2>Welcome to order your foods whenever, wherever YOU ARE!</h2>
+		</div>
+		<div class="last"> &#169; Pinocone Catering Online Services || Est. 2022</div>
+		<br />
+	</footer>
 </body>
 </html>
