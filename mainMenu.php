@@ -28,7 +28,7 @@
                 <h5>
                     <span class="price">RM<?=number_format($product['ItemPrice'],2)?></span>
                 </h5>
-                <button type="submit" name="addCart">Add to Cart <i class="fas fa-shopping-cart"></i></button>
+                <button type="submit" name="addCart" class="cart">Add to Cart <i class="fas fa-shopping-cart"></i></button>
             </div>
         </div>
         <?php endforeach; ?>
