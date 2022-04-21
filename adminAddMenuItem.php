@@ -3,7 +3,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <BODY>
-    <form method="POST" Action="adminSaveMenuItem.php">
+    <form method="POST" Action="
+    .php">
         <div class="form-row align-items-center">
             <div class="col-auto my-1">
             <label for="exampleInputName">Select Food category </label>
