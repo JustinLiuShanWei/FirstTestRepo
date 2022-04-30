@@ -15,24 +15,6 @@
 </head>
 <body>
     <?php include_once 'mainMenu-navbar.php'; ?>
-    <p class="productNum"><?=$total_products?> Products Found</p>
-    <div class="productContainer">
-        <?php foreach ($products as $product): ?>
-        <div class="card">
-            <div>
-                <img src="images/productImages/<?=$product['ItemImageLoc']?>" alt="<?=$product['foodTitle']?>" class="card-image">
-            </div>
-            <div class="card-body">
-                <h2 class="card-title"><?=$product['ItemName']?></h2>
-                <p class="card-text"><?=$product['ItemDesc']?></p>
-                <h5>
-                    <span class="price">RM<?=number_format($product['ItemPrice'],2)?></span>
-                </h5>
-                <button type="submit" name="addCart" class="cart">Add to Cart <i class="fas fa-shopping-cart"></i></button>
-            </div>
-        </div>
-        <?php endforeach; ?>
-    </div>
-    <?php include_once 'mainMenu-footer.php'; ?>
+    
 </body>
 </html>
