@@ -1,0 +1,98 @@
+.membershipContainer{
+    
+    display: block;
+    text-align: center;
+}
+
+.membershipContainer h1{
+    font-weight: 600;
+}
+
+.membershipStatus{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+#membershipTable{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 17px 50px 0 rgba(0,0,0,0.1);
+    width: 100%;
+    text-align: center;
+    background-color: white;
+}
+
+#membershipTable th{
+    font-size: smaller;
+    color: #707373;
+}
+
+#membershipTable th td{
+    padding: 50px;
+}
+
+.w3-card-4 {
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+
+.w3-card-4 .top{
+    background-color: #FC766AFF;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    font-style: bold;
+    justify-content: center;
+}
+
+.w3-card-4 .top h1{
+    font-weight: 600;
+}
+
+.w3-card-4 .top h3{
+    font-weight: 600;
+}
+
+.w3-card-4 {
+    width: 30%;
+    margin: auto;
+    height: auto;
+    text-align: left;
+    background-color: whitesmoke;
+}
+
+.w3-container .top{
+    text-align: center;
+}
+
+.w3-container2{
+    padding: 20px;
+    color: black;
+}
+
+.w3-container2 ul{
+    list-style: none;
+}
+
+.w3-container2 li{
+    color: black;
+}
+
+.w3-container3{
+    text-align: center;
+}
+
+.w3-container3 button{
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5B84B1FF;
+}
+
+.w3-container3 button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.renew {
+    color: red;
+    text-decoration: underline;
+}

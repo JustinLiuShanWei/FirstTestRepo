@@ -3,14 +3,7 @@
   include ("db_connect.php");
   include ("login-functions.php");
   $loginst = check_login_admin($conn);
-
-  if($loginst!=1){
-    echo "<script> alert('Not Login. Please Login!');</script>";
-    echo "<script> window.location='login.php';</script>";
-  }
 ?>
-
-
 <HTML>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -25,9 +18,15 @@ $(document).ready(function(){
     $("#newItem").click(function(){
         $("#contents").load("adminAddMenuItem.php");
     });
-    $("#ModifyItem").click(function(){
+    $("#modifyItem").click(function(){
         $("#contents").load("adminModifyItem.php");
     });
+    $('#emailMembership').click(function(){
+      $('#contents').load("emailMembership.php")
+    })
+    $('#logout').click(function(){
+      $('#contents').load("logout.php")
+    })
 });
 </script>
 </head>
@@ -42,26 +41,27 @@ $(document).ready(function(){
       </div>
     <div class="row" style="height: 5%;background-color:#480673; color:#ffffff;">
       <div class="col-10"><h3>Pinocone Food Catering Admin Page</h3></div>
-      <div class="col-2"><a href="adminLogout.php">Log Out <?php echo $_SESSION['adminName'];?></a></div>
+      <div class="col-2"><a id="logout">Log Out <?php echo $_SESSION['adminName'];?></a></div>
     </div>
       
     <div class="row" style="margin:25px;height:90%;">
-            <div class="shadow-sm p-3 mb-5 bg-white rounded">
-            <div class="col-4" style="background-color:#ffffff; padding:40px; border-color:#230237; margin:20px;"></div>
-            <ul class="list-group">
-            <div class="list-group-item list-group-item-info"><a id="newCat" href="#"> Create a Food Category</a></div>
-            <div class="list-group-item list-group-item-info"><a id="DelCat" href="#"> Delete a Food Category</a></div>
-            <div class="list-group-item list-group-item-info"><a id="newItem" href="#"> Add a Food Item</a></div>
-            <div class="list-group-item list-group-item-info"><a id="ModifyItem" href="#"> Modify a Food Item</a></div>
-            </div>
-            
-            <div class="col-8 shadow p-3 mb-5 bg-white rounded">
-            <div class="col-8" id="contents" style="background-color:#ffffff; padding:40px; border-color:#230237; margin:20px;">
-            </div>
-            </div>
-            
-        </div>
+      <div class="shadow-sm p-3 mb-5 bg-white rounded">
+        <div class="col-4" style="background-color:#ffffff; padding:40px; border-color:#230237; margin:20px;"></div>
+      <ul class="list-group">
+        <div class="list-group-item list-group-item-info"><a id="newCat" href="#"> Create a Food Category</a></div>
+        <div class="list-group-item list-group-item-info"><a id="DelCat" href="#"> Delete a Food Category</a></div>
+        <div class="list-group-item list-group-item-info"><a id="newItem" href="#"> Add a Food Item</a></div>
+        <div class="list-group-item list-group-item-info"><a id="modifyItem" href="#"> Modify a Food Item</a></div>
+        <div class="list-group-item list-group-item-info"><a id="emailMembership" href="#"> Membership Emailing Function</a></div>
       </div>
+            
+        <div class="col-8 shadow p-3 mb-5 bg-white rounded">
+        <div class="col-8" id="contents" style="background-color:#ffffff; padding:40px; border-color:#230237; margin:20px;">
+        </div>
+        </div>
+        
+    </div>
+  </div>
 </div>
 </BODY>
 </HTML>
