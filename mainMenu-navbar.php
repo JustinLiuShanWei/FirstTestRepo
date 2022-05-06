@@ -18,7 +18,7 @@
         <?php if ($loginst == "1"){?>
         <nav>
             <ul class="nav_links">
-                <li><a href="#">Cart</a></li>
+                <li><a href="cart.php">Cart</a></li>
             </ul>
         </nav>
         <a class="cta" href="#"><button>Menu</button></a>
