@@ -18,7 +18,7 @@
     <p class="productNum"><?=$total_products?> Products Found</p>
     <div class="productContainer">
         <?php foreach ($products as $product): ?>
-        <div class="card">
+            <div class="card">
             <div>
                 <img src="images/productImages/<?=$product['ItemImageLoc']?>" alt="<?=$product['foodTitle']?>" class="card-image">
             </div>

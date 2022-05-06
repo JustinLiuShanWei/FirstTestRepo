@@ -11,7 +11,6 @@ function check_login($conn){
             return 1;
         }
     }
-    //redirect to login
     else{
         return 0;
     }
