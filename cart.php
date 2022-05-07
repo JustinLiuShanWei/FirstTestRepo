@@ -118,6 +118,7 @@ switch($_GET["action"]) {
     }
     ?>
     </div>
+    <?php include_once 'button.php'; ?>
 
     
 </body>
