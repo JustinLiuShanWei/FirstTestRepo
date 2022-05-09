@@ -289,3 +289,24 @@ textarea.form-control{
   color:white;
 }
 
+/* FOllow Us*/
+.w-100{
+  width: 100%;
+  margin-top: 48px;
+}
+
+.social-media h3{
+font-size: 18px; 
+}
+
+.social-media p a{
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.social-media p a:hover{
+  color: rgb(255, 255, 255); 
+}
