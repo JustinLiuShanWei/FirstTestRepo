@@ -102,7 +102,14 @@
 										<p><span>Website:</span> <a href="index.php">index.php</a></p>
 									</div>
 								</div>
-								
+								<div class="w-100 social-media">
+									<h3>Follow us here</h3>
+									<p>
+										<a href="https://www.facebook.com/profile.php?id=100000792619178">Facebook</a>
+										<a href="https://www.snapchat.com/add/jasonkho14">Snapchat</a>
+										<a href="https://www.instagram.com/jason_kho02/">Instagram</a>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
