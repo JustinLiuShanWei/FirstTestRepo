@@ -3,11 +3,10 @@
 
     $subject = "My subject";
     $email = "101209992@students.swinburne.edu.my";
-    $msg = "First line of text\nSecond line of text";
-
     $id=$_POST["abc"];
     $currentDate = date("Y-m-d");
-    
+    $msg = "Hi Your Membership has expired! Please renew your membership. Expiry Date:$currentDate";
+
     if ($id = "all") $qry="select email from userdatabase where membership_expiry < '$currentDate'";
     else $qry="select email from userdatabase where id = $id";
     $run=mysqli_query($conn,$qry);

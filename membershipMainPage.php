@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    include ("db_connect.php");
+    include_once 'verify-Function.php';
+    $membershipCheck = checkMembership($conn);
+    $Expiry = checkMembershipExpiry($conn);
+    $finalCheckDate = finalCheckDate($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +15,10 @@
     <link rel="stylesheet" href="style/styleMembership.css?v1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
+    
 <body>
     <?php include_once 'mainMenu-navbar.php'; ?>
-    <?php include_once 'verify-Function.php'; ?>
-    <?php
-        $membershipCheck = checkMembership($conn);
-        $Expiry = checkMembershipExpiry($conn);
-        $finalCheckDate = finalCheckDate($conn);
-    ?>
     <div class="membershipContainer">
         <h1>Membership</h1>
         <p>Get more Offer by Opt-In Our Membership</p>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2022 at 05:25 PM
+-- Generation Time: May 15, 2022 at 04:47 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 7.4.28
 
@@ -24,6 +24,40 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `order_database`
+--
+
+CREATE TABLE `order_database` (
+  `item_no` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL,
+  `item_quantity` int(11) NOT NULL,
+  `item_price` double NOT NULL,
+  `order_status` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_database`
+--
+
+INSERT INTO `order_database` (`item_no`, `order_id`, `user_id`, `item_id`, `item_quantity`, `item_price`, `order_status`) VALUES
+(1, 0, 2, 1, 3, 20, 'Canceled'),
+(2, 1, 2, 1, 3, 20, 'Completed'),
+(3, 2, 2, 2, 1, 4, 'Preparing'),
+(4, 3, 2, 2, 1, 4, 'Preparing'),
+(5, 4, 2, 2, 1, 4, 'Preparing'),
+(6, 5, 2, 0, 1, 5, 'Preparing'),
+(7, 6, 2, 1, 1, 3, 'Preparing'),
+(8, 7, 2, 0, 1, 5, 'Preparing'),
+(9, 7, 2, 1, 1, 3, 'Preparing'),
+(10, 7, 2, 2, 1, 4, 'Preparing'),
+(11, 8, 2, 1, 3, 3, 'Preparing'),
+(12, 9, 3, 1, 1, 3, 'Order Placed');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product_category_extension`
 --
 
@@ -38,7 +72,6 @@ CREATE TABLE `product_category_extension` (
 
 INSERT INTO `product_category_extension` (`Category`, `CatDesc`) VALUES
 (1, 'Asian Food Cat'),
-(3, 'Asian Food Cat'),
 (4, 'Cold Freezing Food'),
 (5, 'Western Food');
 
@@ -64,10 +97,9 @@ CREATE TABLE `product_database` (
 --
 
 INSERT INTO `product_database` (`ItemID`, `ItemName`, `ItemDesc`, `ItemQuantity`, `ItemPrice`, `ItemPriceDis`, `ItemImageLoc`, `ItemCategory`) VALUES
-(2, 'American Burger', 'Dsdadadsadasdasdadwqewqeqwdsadas', 10, 5, 0, 'product2.jpg', 1),
-(3, 'Kolo Mee', 'Nice food in Kuching to have', 10, 3, 0, 'product3.jpg', 3),
-(5, 'Kolo', 'ewqeqeqewq', 2, 3, 10, 'product3.jpg', 1),
-(7, 'Kolo Mee', 'ewqeqeeqee', 2, 4, 0, 'product3.jpg', 5);
+(0, 'American Burger', 'Dsdadadsadasdasdadwqewqeqwdsadas', 10, 5, 4, 'product2.jpg', 1),
+(1, 'Kolo', 'ewqeqeqewq', 2, 3, 2, 'product3.jpg', 1),
+(2, 'Kolo Mee', 'ewqeqeeqee', 2, 4, 3, 'product3.jpg', 5);
 
 -- --------------------------------------------------------
 
@@ -81,29 +113,38 @@ CREATE TABLE `userdatabase` (
   `email` text NOT NULL,
   `phone` int(20) NOT NULL,
   `username` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL
+  `password` varchar(200) NOT NULL,
+  `admin` tinyint(1) NOT NULL,
+  `membership_status` tinyint(1) NOT NULL,
+  `membership_expiry` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `userdatabase`
 --
 
-INSERT INTO `userdatabase` (`id`, `name`, `email`, `phone`, `username`, `password`) VALUES
-(1, '', '', 0, 'admin', 'admin'),
-(2, '', '', 0, 'weqqewqw', 'qwewqewq'),
-(3, '', '', 0, 'wqewqewqe', 'wqewqe'),
-(4, '', '', 0, 'wewew', 'wewe'),
-(5, '', '', 108569336, 'wqeqwe', 'qwewqe'),
-(6, '', 'wongyungen@gmail.com', 108569336, 'wqeq', 'wqeqe'),
-(7, '', 'wongyungen@gmail.com', 108569336, 'qeqewqeqe', 'wqewqe'),
-(8, '', 'wongyungen@gmail.com', 108569336, 'qewqeqeqe', 'wqewqq'),
-(9, 'Yung En Wong', 'wongyungen@gmail.com', 108569336, 'wewqee', 'wqe'),
-(10, 'Yung En Wong', 'wongyungen@gmail.com', 108569336, 'wqwq', '123456'),
-(11, 'Yung En Wong', 'wongyungen@gmail.com', 108569336, 'qwqweqeq', '827ccb0eea8a706c4c34a16891f84e7b');
+INSERT INTO `userdatabase` (`id`, `name`, `email`, `phone`, `username`, `password`, `admin`, `membership_status`, `membership_expiry`) VALUES
+(1, '', '', 0, 'admin', 'admin', 1, 0, NULL),
+(2, 'wewqe', 'wqeqwqeqq', 0, 'wong', '1234', 0, 1, '2022-05-21'),
+(3, 'wqeqwe', 'weqeqeqwe', 0, 'wong2', '1234', 0, 1, '2022-05-01'),
+(4, '', '', 0, 'wewew', 'wewe', 0, 0, NULL),
+(5, '', '', 108569336, 'wqeqwe', 'qwewqe', 0, 0, NULL),
+(6, '', 'wongyungen@gmail.com', 108569336, 'wqeq', 'wqeqe', 0, 1, '2022-05-11'),
+(7, '', 'wongyungen@gmail.com', 108569336, 'qeqewqeqe', 'wqewqe', 0, 0, NULL),
+(8, '', 'wongyungen@gmail.com', 108569336, 'qewqeqeqe', 'wqewqq', 0, 0, NULL),
+(9, 'Yung En Wong', 'wongyungen@gmail.com', 108569336, 'wewqee', 'wqe', 0, 0, NULL),
+(10, 'Yung En Wong', 'wongyungen@gmail.com', 108569336, 'wqwq', '123456', 0, 0, NULL),
+(11, 'Yung En Wong', 'wongyungen@gmail.com', 108569336, 'qwqweqeq', '827ccb0eea8a706c4c34a16891f84e7b', 0, 0, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `order_database`
+--
+ALTER TABLE `order_database`
+  ADD PRIMARY KEY (`item_no`);
 
 --
 -- Indexes for table `product_category_extension`
@@ -126,6 +167,12 @@ ALTER TABLE `userdatabase`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `order_database`
+--
+ALTER TABLE `order_database`
+  MODIFY `item_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `product_category_extension`
