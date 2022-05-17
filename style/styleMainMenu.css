@@ -1,5 +1,15 @@
+.category-section{
+    margin: 20px 100px;
+    display: flex;
+    padding: 20px 40px;
+}
+
+.cat{
+    margin:0 5px
+}
+
 .productNum {
-    margin: 20px 250px;
+    margin: 20px 100px;
 }
 
 .productContainer{
