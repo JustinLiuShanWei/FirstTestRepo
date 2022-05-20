@@ -92,3 +92,7 @@
     line-height: 30px;
     margin-left: 5px;
 }
+
+.product-pic {
+    display: block;
+}

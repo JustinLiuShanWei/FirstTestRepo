@@ -59,7 +59,7 @@
                         <?php 
                         }   
                             $itemID = $data["item_id"];
-                            $q = mysqli_query($conn,"SELECT ItemName FROM product_database WHERE ItemID='$itemID'");
+                            $q = mysqli_query($conn,"SELECT * FROM product_database WHERE ItemID='$itemID'");
                             $item = mysqli_fetch_assoc($q);
                             $itemQuantity = $data["item_quantity"];
                             $itemPrice = $data["item_price"];
@@ -68,7 +68,7 @@
                             <div class="product-section">
                                 <div class="product-detail">
                                     <div class="product-pic">
-                                        <img src="images/productImages/<?=$item["ItemImageLoc"]?>" alt="" class="card-image">
+                                        <img src=<?php $object = $item['ItemImageLoc'];echo "images/productImages/$object";?> alt="PRODUCT" class="card-image" style="width:80px; height:80px; object-fit:cover;">
                                     </div>
                                     <div class="product-desc" >
                                         <span><?php echo $item["ItemName"]?></span><br>
