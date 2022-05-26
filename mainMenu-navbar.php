@@ -30,8 +30,8 @@
         <img class="logo" src="images/Logo.png" alt="logo">
         <?php if ($loginst == "1"){?>
         <nav>
-            <ul class="nav_links"> 
-                <li><a href="cartMainPage.php">Cart</a></li>
+            <ul class="nav_links">
+                <li><a href="cart.php">Cart</a></li>
             </ul>
         </nav>
         <div id="mySidenav" class="sidenav">
