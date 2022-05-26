@@ -1,5 +1,4 @@
 <?php 
-    session_start();
     $loginst = 0;
     include ("db_connect.php");
     include ("login-functions.php");
@@ -32,14 +31,15 @@
         <?php if ($loginst == "1"){?>
         <nav>
             <ul class="nav_links"> 
-                <li><a href="#">Cart</a></li>
+                <li><a href="cartMainPage.php">Cart</a></li>
             </ul>
         </nav>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">Profile</a>
+            <a href="mainMenu.php">Main Menu</a>
+            <a href="customerProfile.php">Profile</a>
             <a href="membershipMainPage.php">Membership</a>
-            <a href="#">My Purchases</a>
+            <a href="purchaseListingMainPage.php">My Purchases</a>
             <a id="logout" href="logout.php" onclick="logout()">Logout</a>
         </div>
         <a class="cta" onclick="openNav()" href="#"><button>Menu</button></a>

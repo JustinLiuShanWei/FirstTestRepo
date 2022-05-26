@@ -22,22 +22,38 @@ $(document).ready(function(){
         $("#contents").load("adminModifyItem.php");
     });
     $('#emailMembership').click(function(){
-      $('#contents').load("emailMembership.php")
+      $('#contents').load("adminEmailMembership.php");
     })
     $('#logout').click(function(){
-      $('#contents').load("logout.php")
+      $('#contents').load("logout.php");
+    })
+    $('#orderManagement').click(function(){
+      $('#contents').load("adminOrderManagement.php");
+    })
+
+    $('#orderRecord').click(function(){
+      $('#contents').load("adminOrderListing.php");
+    })
+
+    $('#membershipRecord').click(function(){
+      $('#contents').load("adminCustomerRecord.php");
     })
 });
 </script>
 </head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+  #contents{
+    max-width: 90%;
+  }
+</style>
+
 
 <BODY>
-<div class="container"  style="background-color:#48404d;">
+<div class="container"  style="background-color:#48404d; width:2000px; max-width:2000px">
       <div class="row" style="height: 5%; background-color:#D193F7; padding:40px;">
     <div class="col-12"></div>
-    
       </div>
     <div class="row" style="height: 5%;background-color:#480673; color:#ffffff;">
       <div class="col-10"><h3>Pinocone Food Catering Admin Page</h3></div>
@@ -52,7 +68,10 @@ $(document).ready(function(){
         <div class="list-group-item list-group-item-info"><a id="DelCat" href="#"> Delete a Food Category</a></div>
         <div class="list-group-item list-group-item-info"><a id="newItem" href="#"> Add a Food Item</a></div>
         <div class="list-group-item list-group-item-info"><a id="modifyItem" href="#"> Modify a Food Item</a></div>
+        <div class="list-group-item list-group-item-info"><a id="membershipRecord" href="#"> Customer Record</a></div>
         <div class="list-group-item list-group-item-info"><a id="emailMembership" href="#"> Membership Emailing Function</a></div>
+        <div class="list-group-item list-group-item-info"><a id="orderManagement" href="#"> Order Managament</a></div>
+        <div class="list-group-item list-group-item-info"><a id="orderRecord" href="#"> Order Record View </a></div>
       </div>
             
         <div class="col-8 shadow p-3 mb-5 bg-white rounded">
